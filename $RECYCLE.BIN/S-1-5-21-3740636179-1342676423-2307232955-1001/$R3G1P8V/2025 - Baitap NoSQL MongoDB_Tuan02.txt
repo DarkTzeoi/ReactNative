@@ -1,0 +1,112 @@
+﻿----------------------- Page 1-----------------------
+
+IUH – FIT – SE  
+
+                                  2.              Bài Tập Tuần 02  
+
+Bài tập các câu Query  
+
+          Sử dụng database collection  nhaHang.json thực hiện một số câu truy vấn sau:  
+
+          nhaHang.json  
+           {  
+                     diaChi: {  
+                               toaNha: '7715',  
+                               toaDo: [ -73.9973325, 40.61174889999999 ],  
+                               duong: '18 Avenue',           //đường  
+                               zipcode: '11214'   
+                     },  
+                     quan: 'Brooklyn',                       //quận  
+                     amThuc: 'American ',                    //ẩm thực  
+                     danhGia:   
+                     [  
+                                 {ngay : ISODate("2014-04-16T00:00:00.000Z"), hang: 'A', diem: 5},  
+                               {ngay : ISODate("2013-04-23T00:00:00.000Z"), hang: 'A', diem: 2},  
+                               {ngay : ISODate("2012-04-24T00:00:00.000Z"), hang: 'A', diem: 5},  
+                               {ngay : ISODate("2011-12-16T00:00:00.000Z"), hang: 'A', diem: 2}  
+                     ],  
+                    ten: 'C & C Catering Service',  
+                    maNhaHang: '40357437'  
+           }  
+
+     1.   Hiển thị tất cả các documents có trong collection nhaHang.   
+
+     2.   Xuất thông tin các field  maNhaHang,  tenNhaHang, quan, amThuc  của  các documents có trong  
+
+          collection nhaHang.  
+
+     3.   Hiển  thị  tất  cả  các  documents  có  trong  collection  nhaHang,  tuy  nhiên  chỉ  xuất  các  fields  
+
+          maNhaHang, tenNhaHang, quan and amThuc và không xuất field _id.    
+
+     4.   Hiển  thị  tất  cả  các  documents  có  trong  collection  restaurants,  tuy  nhiên  chỉ  xuất  các  fields  
+
+          maNhaHang, tenNhaHang , quan, zipcode và không xuất field _id.  
+
+     5.   Hiển thị tất cả các documents có trong collection nhaHang với field quan có giá trị là Bronx:  
+
+               a.   Sau đó, chỉ xuất giới hạn 5 documents đầu tiên;  
+
+               b.   Tiếp tục, hiển thị 5 documents tiếp theo sau khi bỏ qua 5 documents đầu tiên.    
+
+     6.   Hiển thị tất cả các documents có trong collection nhaHang với điều kiện  diem trong field danhGia  
+
+          lớn hơn 90.   
+
+                                                                 5  
+
+----------------------- Page 2-----------------------
+
+IUH – FIT – SE  
+
+     7.  Hiển thị tất cả các documents có trong collection nhaHang với điều kiện diem trong field danhGia  
+
+         lớn hơn 80 và nhỏ hơn 100.    
+
+     8.  Hiển thị tất cả các documents có trong collection nhaHang với điều kiện giá trị toaDo trong field  
+
+         diaChi nhỏ hơn -95.754168.  
+
+     9.  Hiển thị tất cả các documents có trong collection nhaHang với điều kiện field amThuc:  
+
+              a.   Khác 'American',  diem của field danhGia lớn hơn 70 và  giá trị toaDo trong field diaChi  
+
+                   nhỏ hơn -65.754168. ******  
+
+              b.   Khác 'American' và diem của field danhGia lớn hơn 70 và  giá trị toaDo trong field diaChi  
+
+                   nhỏ hơn -65.754168.  
+
+              c.   Khác 'American' và giá trị hang của field danhGia là 'A', và fiels quan không là Brooklyn.  
+
+                   Sau đó sắp xếp các document theo thứ tự tăng dần của field amThuc.  
+
+     10.  Hiển  thị  tất  cả  các  documents  có  trong  collection  nhaHang,  tuy  nhiên  chỉ  xuất  các  fields  
+
+         maNhaHang, tenNhaHang, quan, amThuc với điều kiện:  
+
+              a.   tenNhaHang có chứa 3 ký tự bắt đầu là  'Wil';  
+
+              b.   tenNhaHang có chứa 3 ký tự cuối cùng là  'ces'.  
+
+              c.   tenNhaHang có chứa 3 ký tự 'Reg'.   
+
+     11.  Hiển thị tất cả các documents có trong collection nhaHang với field quan:  
+
+              a.   Có giá trị là Bronx và field amThuc có giá trị là American hoặc Chinese.  
+
+              b.   Có giá trị Staten Island or Queens or Bronxor Brooklyn, chỉ xuất các field maNhaHang,  
+
+                   tenNhaHang  
+
+              c.   Không  chứa  các  giá  trị  Staten  Island  or  Queens  or  Bronxor  Brooklyn,  chỉ  xuất  các  
+
+                   field maNhaHang, tenNhaHang   
+
+     12.  Hiển thị tất cả các documents có trong collection nhaHang với giá trị diem của field danhGia không  
+
+         lớn hơn 10, chỉ xuất các field maNhaHang, tenNhaHang, quan, amThuc.  
+
+                                        
+
+                                                            6  

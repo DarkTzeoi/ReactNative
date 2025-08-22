@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"mslop":{"$numberInt":"1"}},"name":"mslop_1","unique":true}],"uuid":"4c70ec99797b4b31b0159384b8d14381","collectionName":"dsLopHoc","type":"collection"}
