@@ -1,10 +1,18 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const bai5_1 = require("./bai5");
-const allPromise = [
-    (0, bai5_1.simulateTask)(2000),
-    (0, bai5_1.simulateTask)(1000),
-    (0, bai5_1.simulateTask)(3000)
-];
-Promise.race(allPromise)
+const prom1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Task 1 done!");
+    }, 2000);
+});
+const prom2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Task 2 done!");
+    }, 6000);
+});
+const prom3 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Task 3 done!");
+    }, 1000);
+});
+Promise.race([prom1, prom2, prom3])
     .then(result => console.log(result));
