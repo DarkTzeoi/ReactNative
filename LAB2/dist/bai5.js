@@ -4,8 +4,8 @@ exports.simulateTask = simulateTask;
 function simulateTask(time) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Task done!");
+            resolve(`Task ${time} done!`);
         }, time);
     });
 }
-simulateTask(5000).then(result => console.log(result));
+simulateTask(5000).then((result) => console.log(result));

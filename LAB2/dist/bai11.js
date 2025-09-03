@@ -1,0 +1,90 @@
+"use strict";
+//Bai 1
+const helloAsync = async () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Hello Async");
+            resolve();
+        }, 1000);
+    });
+};
+(async () => {
+    await helloAsync();
+})();
+// Bai 2
+const resolveNumber = async () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(10);
+            resolve();
+        }, 1000);
+    });
+};
+(async () => {
+    await resolveNumber();
+})();
+//Bai 3
+const rejectProm = async () => {
+    return new Promise((_, reject) => {
+        setTimeout(() => {
+            reject("Something went wrong!!");
+        }, 1000);
+    });
+};
+(async () => {
+    try {
+        await rejectProm();
+    }
+    catch (error) {
+        console.error(error);
+    }
+})();
+//Bai4
+const getRandomNumber = async () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(Math.floor(Math.random() * 100)), 1000);
+    });
+};
+(async () => {
+    try {
+        const randNum = await getRandomNumber();
+        console.log(randNum);
+    }
+    catch (error) {
+        console.error(error);
+    }
+})();
+// Bài 5
+function simulateTask(time) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(`Task ${time}ms done!!`);
+            resolve(`Done ${time}ms`);
+        }, time);
+    });
+}
+// Bài 5
+(async () => {
+    await simulateTask(2000);
+})();
+// Bài 6: Promise.all
+(async () => {
+    const task = [simulateTask(4000), simulateTask(5000), simulateTask(3000)];
+    const result = await Promise.all(task);
+    console.log("Bài 6:", result);
+})();
+// Bài 7: Promise.race
+(async () => {
+    const task = [simulateTask(500), simulateTask(150), simulateTask(200)];
+    const result = await Promise.race(task);
+    console.log("Bài 7:", result);
+})();
+//Bai 8: Promise chain
+const calcNumber = async (num) => {
+    const squared = num * num;
+    const doubled = squared * 2;
+    return doubled + 5;
+};
+(async () => {
+    console.log("Bai 8: ", await calcNumber(5));
+})();
