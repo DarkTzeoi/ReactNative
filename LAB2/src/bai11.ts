@@ -98,3 +98,26 @@ const calcNumber = async (num: number): Promise<number> => {
 (async () => {
   console.log("Bai 8: ", await calcNumber(5));
 })();
+
+//Bai9
+const filterEvenNumbers = async (arr: number[]): Promise<number[]> => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(arr.filter((n) => n % 2 === 0)), 1000);
+  });
+};
+
+(async () => {
+  console.log(await filterEvenNumbers([1, 2, 3, 4, 5, 6]));
+})();
+
+//Bai 10
+(async () => {
+  try {
+    const result = await simulateTask(1000);
+    console.log(result);
+  } catch (err) {
+    console.error("Error:", err);
+  } finally {
+    console.log("Done!");
+  }
+})();
